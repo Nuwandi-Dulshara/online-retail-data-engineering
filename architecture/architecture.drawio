@@ -1,0 +1,125 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="xNrBgaZKpkSnJW87X3fO">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" plantUmlData="{&#xa;  &quot;data&quot;: &quot;\n@startuml\n\ntitle Online Retail Data Engineering Architecture\n\ntop to bottom direction\n\nskinparam backgroundColor #FFFFFF\nskinparam shadowing false\nskinparam roundcorner 15\nskinparam defaultFontName Arial\nskinparam defaultFontSize 14\nskinparam ArrowColor #475569\nskinparam ArrowThickness 2\nskinparam packageStyle rectangle\nskinparam linetype ortho\n\nrectangle \&quot;UCI Online Retail Dataset\\nCSV / Excel\&quot; as Source #E8F1FC\n\npackage \&quot;Databricks Free Edition\&quot; #F8FAFC {\n\n    database \&quot;BRONZE LAYER\\nRaw Retail Data\\nDelta Table\&quot; as Bronze #E8C49E\n\n    rectangle \&quot;01_Data_Cleaning\\nPySpark\\nData Cleaning and Validation\&quot; as Cleaning #DBEAFE\n\n    database \&quot;SILVER LAYER\\nCleaned and Validated Data\\nDelta Table\&quot; as Silver #E2E8F0\n\n    rectangle \&quot;02_Data_Transformation\\nPySpark and SQL\\nBusiness Aggregations\&quot; as Transformation #DBEAFE\n\n    database \&quot;GOLD LAYER\\nBusiness Analytics Tables\\nSales | Customers | Products\&quot; as Gold #FDE68A\n\n    rectangle \&quot;Databricks SQL\\nBusiness Intelligence\&quot; as SQL #D1FAE5\n\n    rectangle \&quot;Lakeflow Jobs\\nAutomated ETL Pipeline\\nDaily at 8:00 AM\\nAsia/Colombo\&quot; as Jobs #E9D5FF\n\n    Source --&gt; Bronze : Data Ingestion\n\n    Bronze --&gt; Cleaning\n    Cleaning --&gt; Silver\n    Silver --&gt; Transformation\n    Transformation --&gt; Gold\n    Gold --&gt; SQL\n\n    Jobs -[dashed]-&gt; Cleaning : Task 01\n    Jobs -[dashed]-&gt; Transformation : Task 02\n\n}\n\nrectangle \&quot;Online Retail Analytics Dashboard\\n7 KPI Cards | 8 Charts\\nBusiness Insights\&quot; as Dashboard #BBF7D0\n\nSQL --&gt; Dashboard : Visualization\n\nlegend bottom\n    Solid arrows: Data flow\n    Dashed arrows: Workflow orchestration\nendlegend\n\n@enduml\n&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="FI7PSAXkepN9aVyn1xVI-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="UCI Online Retail Dataset&#xa;CSV / Excel" plantUmlId="n_0" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#E8F1FC;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" plantUmlBaseValue="UCI Online Retail Dataset&#xa;CSV / Excel" id="FI7PSAXkepN9aVyn1xVI-2">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-1" style="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#E8F1FC;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" vertex="1">
+            <mxGeometry height="49" width="195" x="189.5" y="107.95" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Online Retail Analytics Dashboard&#xa;7 KPI Cards | 8 Charts&#xa;Business Insights" plantUmlId="n_1" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#BBF7D0;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" plantUmlBaseValue="Online Retail Analytics Dashboard&#xa;7 KPI Cards | 8 Charts&#xa;Business Insights" id="FI7PSAXkepN9aVyn1xVI-3">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-1" style="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#BBF7D0;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" vertex="1">
+            <mxGeometry height="62" width="258" x="158" y="951.95" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Databricks Free Edition" plantUmlId="c_2" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=15;fillColor=#F8FAFC;strokeColor=#181818;verticalAlign=top;align=center;spacingTop=-4;fontSize=14;fontStyle=1;whiteSpace=wrap;shadow=0;fontFamily=Arial;" plantUmlBaseValue="Databricks Free Edition" id="FI7PSAXkepN9aVyn1xVI-4">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-1" style="rounded=1;absoluteArcSize=1;arcSize=15;fillColor=#F8FAFC;strokeColor=#181818;verticalAlign=top;align=center;spacingTop=-4;fontSize=14;fontStyle=1;whiteSpace=wrap;shadow=0;fontFamily=Arial;" vertex="1">
+            <mxGeometry height="721" width="374" x="100" y="182.95" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="BRONZE LAYER&#xa;Raw Retail Data&#xa;Delta Table" plantUmlId="n_3" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#E8C49E;strokeColor=#181818;fontSize=14;whiteSpace=wrap;rounded=1;arcSize=15;absoluteArcSize=1;shadow=0;fontFamily=Arial;" plantUmlBaseValue="BRONZE LAYER&#xa;Raw Retail Data&#xa;Delta Table" id="FI7PSAXkepN9aVyn1xVI-5">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-4" style="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#E8C49E;strokeColor=#181818;fontSize=14;whiteSpace=wrap;rounded=1;arcSize=15;absoluteArcSize=1;shadow=0;fontFamily=Arial;" vertex="1">
+            <mxGeometry height="62" width="119" x="15" y="42" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="01_Data_Cleaning&#xa;PySpark&#xa;Data Cleaning and Validation" plantUmlId="n_4" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#DBEAFE;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" plantUmlBaseValue="01_Data_Cleaning&#xa;PySpark&#xa;Data Cleaning and Validation" id="FI7PSAXkepN9aVyn1xVI-6">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-4" style="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#DBEAFE;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" vertex="1">
+            <mxGeometry height="62" width="222" x="40.625" y="172" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="SILVER LAYER&#xa;Cleaned and Validated Data&#xa;Delta Table" plantUmlId="n_5" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#E2E8F0;strokeColor=#181818;fontSize=14;whiteSpace=wrap;rounded=1;arcSize=15;absoluteArcSize=1;shadow=0;fontFamily=Arial;" plantUmlBaseValue="SILVER LAYER&#xa;Cleaned and Validated Data&#xa;Delta Table" id="FI7PSAXkepN9aVyn1xVI-7">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-4" style="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#E2E8F0;strokeColor=#181818;fontSize=14;whiteSpace=wrap;rounded=1;arcSize=15;absoluteArcSize=1;shadow=0;fontFamily=Arial;" vertex="1">
+            <mxGeometry height="62" width="194" x="54.625" y="294" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="02_Data_Transformation&#xa;PySpark and SQL&#xa;Business Aggregations" plantUmlId="n_6" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#DBEAFE;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" plantUmlBaseValue="02_Data_Transformation&#xa;PySpark and SQL&#xa;Business Aggregations" id="FI7PSAXkepN9aVyn1xVI-8">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-4" style="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#DBEAFE;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" vertex="1">
+            <mxGeometry height="62" width="201" x="137.79166666666666" y="416" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="GOLD LAYER&#xa;Business Analytics Tables&#xa;Sales | Customers | Products" plantUmlId="n_7" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#FDE68A;strokeColor=#181818;fontSize=14;whiteSpace=wrap;rounded=1;arcSize=15;absoluteArcSize=1;shadow=0;fontFamily=Arial;" plantUmlBaseValue="GOLD LAYER&#xa;Business Analytics Tables&#xa;Sales | Customers | Products" id="FI7PSAXkepN9aVyn1xVI-9">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-4" style="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#FDE68A;strokeColor=#181818;fontSize=14;whiteSpace=wrap;rounded=1;arcSize=15;absoluteArcSize=1;shadow=0;fontFamily=Arial;" vertex="1">
+            <mxGeometry height="62" width="210" x="133.29166666666666" y="538" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Databricks SQL&#xa;Business Intelligence" plantUmlId="n_8" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#D1FAE5;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" plantUmlBaseValue="Databricks SQL&#xa;Business Intelligence" id="FI7PSAXkepN9aVyn1xVI-10">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-4" style="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#D1FAE5;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" vertex="1">
+            <mxGeometry height="49" width="179" x="148.79166666666666" y="660" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Lakeflow Jobs&#xa;Automated ETL Pipeline&#xa;Daily at 8:00 AM&#xa;Asia/Colombo" plantUmlId="n_9" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#E9D5FF;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" plantUmlBaseValue="Lakeflow Jobs&#xa;Automated ETL Pipeline&#xa;Daily at 8:00 AM&#xa;Asia/Colombo" id="FI7PSAXkepN9aVyn1xVI-11">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-4" style="rounded=1;absoluteArcSize=1;arcSize=15;strokeWidth=1;fillColor=#E9D5FF;strokeColor=#181818;whiteSpace=wrap;fontSize=14;shadow=0;fontFamily=Arial;" vertex="1">
+            <mxGeometry height="78" width="190" x="169" y="34" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_11" plantUmlBaseStyle="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="FI7PSAXkepN9aVyn1xVI-13">
+          <mxCell edge="1" parent="FI7PSAXkepN9aVyn1xVI-4" source="FI7PSAXkepN9aVyn1xVI-5" style="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="FI7PSAXkepN9aVyn1xVI-6">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_12" plantUmlBaseStyle="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="FI7PSAXkepN9aVyn1xVI-14">
+          <mxCell edge="1" parent="FI7PSAXkepN9aVyn1xVI-4" source="FI7PSAXkepN9aVyn1xVI-6" style="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="FI7PSAXkepN9aVyn1xVI-7">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Task 01" plantUmlId="e_16" plantUmlBaseStyle="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;labelBackgroundColor=#FFFFFF;labelPosition=right;align=left;endArrow=classicThin;endFill=1;dashed=1;dashPattern=7 7;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Task 01" id="FI7PSAXkepN9aVyn1xVI-18">
+          <mxCell edge="1" parent="FI7PSAXkepN9aVyn1xVI-4" source="FI7PSAXkepN9aVyn1xVI-11" style="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;labelBackgroundColor=#FFFFFF;labelPosition=right;align=left;endArrow=classicThin;endFill=1;dashed=1;dashPattern=7 7;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="FI7PSAXkepN9aVyn1xVI-6">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_13" plantUmlBaseStyle="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="FI7PSAXkepN9aVyn1xVI-15">
+          <mxCell edge="1" parent="FI7PSAXkepN9aVyn1xVI-4" source="FI7PSAXkepN9aVyn1xVI-7" style="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="FI7PSAXkepN9aVyn1xVI-8">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_14" plantUmlBaseStyle="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="FI7PSAXkepN9aVyn1xVI-16">
+          <mxCell edge="1" parent="FI7PSAXkepN9aVyn1xVI-4" source="FI7PSAXkepN9aVyn1xVI-8" style="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="FI7PSAXkepN9aVyn1xVI-9">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Task 02" plantUmlId="e_17" plantUmlBaseStyle="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;labelBackgroundColor=#FFFFFF;labelPosition=right;align=left;endArrow=classicThin;endFill=1;dashed=1;dashPattern=7 7;exitX=0.593;exitY=1;exitDx=0;exitDy=0;entryX=0.716;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Task 02" id="FI7PSAXkepN9aVyn1xVI-19">
+          <mxCell edge="1" parent="FI7PSAXkepN9aVyn1xVI-4" source="FI7PSAXkepN9aVyn1xVI-11" style="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;labelBackgroundColor=#FFFFFF;labelPosition=right;align=left;endArrow=classicThin;endFill=1;dashed=1;dashPattern=7 7;exitX=0.593;exitY=1;exitDx=0;exitDy=0;entryX=0.716;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="FI7PSAXkepN9aVyn1xVI-8">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="281.63" y="172" />
+                <mxPoint x="281.63" y="356" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_15" plantUmlBaseStyle="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="FI7PSAXkepN9aVyn1xVI-17">
+          <mxCell edge="1" parent="FI7PSAXkepN9aVyn1xVI-4" source="FI7PSAXkepN9aVyn1xVI-9" style="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="FI7PSAXkepN9aVyn1xVI-10">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Data Ingestion" plantUmlId="e_10" plantUmlBaseStyle="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;labelBackgroundColor=#FFFFFF;labelPosition=right;align=left;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Data Ingestion" id="FI7PSAXkepN9aVyn1xVI-12">
+          <mxCell edge="1" parent="FI7PSAXkepN9aVyn1xVI-1" source="FI7PSAXkepN9aVyn1xVI-2" style="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;labelBackgroundColor=#FFFFFF;labelPosition=right;align=left;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="FI7PSAXkepN9aVyn1xVI-5">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Visualization" plantUmlId="e_18" plantUmlBaseStyle="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;labelBackgroundColor=#FFFFFF;labelPosition=right;align=left;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Visualization" id="FI7PSAXkepN9aVyn1xVI-20">
+          <mxCell edge="1" parent="FI7PSAXkepN9aVyn1xVI-1" source="FI7PSAXkepN9aVyn1xVI-10" style="strokeColor=#475569;fontColor=#000000;fontSize=14;html=1;labelBackgroundColor=#FFFFFF;labelPosition=right;align=left;endArrow=classicThin;endFill=1;strokeWidth=2;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="FI7PSAXkepN9aVyn1xVI-3">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Online Retail Data Engineering Architecture" plantUmlId="title_19" plantUmlBaseStyle="text;html=1;fillColor=none;strokeColor=none;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=middle;fontFamily=Arial;" plantUmlBaseValue="Online Retail Data Engineering Architecture" id="FI7PSAXkepN9aVyn1xVI-21">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-1" style="text;html=1;fillColor=none;strokeColor=none;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=middle;fontFamily=Arial;" vertex="1">
+            <mxGeometry height="24" width="335" x="120" y="70" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Solid arrows: Data flow&lt;br&gt;Dashed arrows: Workflow orchestration" plantUmlId="legend_0" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=15;fillColor=none;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=14;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;spacingLeft=5;spacingTop=1;whiteSpace=wrap;html=1;" plantUmlBaseValue="Solid arrows: Data flow&lt;br&gt;Dashed arrows: Workflow orchestration" id="FI7PSAXkepN9aVyn1xVI-22">
+          <mxCell parent="FI7PSAXkepN9aVyn1xVI-1" style="rounded=1;absoluteArcSize=1;arcSize=15;fillColor=none;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=14;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;spacingLeft=5;spacingTop=1;whiteSpace=wrap;html=1;" vertex="1">
+            <mxGeometry height="42.98" width="277.54" x="148.23000000000002" y="1033.95" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
